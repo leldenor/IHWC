@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "446359876636",
+    "firebase_url": "https://ihwc-app-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "ihwc-app",
+    "storage_bucket": "ihwc-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446359876636:android:37037b2ae6b98963fc1bd9",
+        "android_client_info": {
+          "package_name": "com.example.ihwc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "446359876636-ej924fb08h8e5tf6mti6k1g4pseuv80j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlFZYe8lFtym4sGtGjT1G73q3keFkg22w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "446359876636-ej924fb08h8e5tf6mti6k1g4pseuv80j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

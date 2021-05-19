@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+
+    <ImageView
+        android:id="@+id/gFlagTeam1"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gGameDate"
+        app:srcCompat="@drawable/rus_flag" />
+
+    <ImageView
+        android:id="@+id/gFlagTeam2"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gGameDate"
+        app:srcCompat="@drawable/cze_flag" />
+
+    <TextView
+        android:id="@+id/gTeam1"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:text="RUS"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/gFlagTeam1"
+        app:layout_constraintStart_toEndOf="@+id/gFlagTeam1"
+        app:layout_constraintTop_toBottomOf="@+id/gGameDate" />
+
+    <TextView
+        android:id="@+id/gTeam2"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
+        android:text="CZE"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/gFlagTeam2"
+        app:layout_constraintEnd_toStartOf="@+id/gFlagTeam2"
+        app:layout_constraintTop_toBottomOf="@+id/gGameDate" />
+
+    <TextView
+        android:id="@+id/gGameNo_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Game 1/15:15"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gFlagTeam1" />
+
+    <TextView
+        android:id="@+id/gStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="10dp"
+        android:text="SCHEDULED"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gFlagTeam2" />
+
+    <TextView
+        android:id="@+id/gtextView8"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text=":"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/gFlagTeam1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gGameDate" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        app:boxStrokeColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/gGameNo_time"
+        app:layout_constraintEnd_toStartOf="@+id/gtextView8"
+        app:layout_constraintStart_toEndOf="@+id/gTeam1"
+        app:layout_constraintTop_toBottomOf="@+id/gGameDate">
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:id="@+id/gScoreTeam1"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textColor="@color/black" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        app:boxStrokeColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/gStatus"
+        app:layout_constraintEnd_toStartOf="@+id/gTeam2"
+        app:layout_constraintStart_toEndOf="@+id/gtextView8"
+        app:layout_constraintTop_toBottomOf="@+id/gGameDate">
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:id="@+id/gScoreTeam2"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textColor="@color/black" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gStatus"
+        app:layout_constraintStart_toEndOf="@+id/gGameNo_time"
+        app:layout_constraintTop_toTopOf="@+id/gGameNo_time" />
+
+    <TextView
+        android:id="@+id/guessScore1"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/gGameNo_time"
+        app:layout_constraintEnd_toStartOf="@+id/gtextView8"
+        app:layout_constraintStart_toEndOf="@+id/gTeam1"
+        app:layout_constraintTop_toBottomOf="@+id/gGameDate"/>
+
+    <TextView
+        android:id="@+id/guessScore2"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/gStatus"
+        app:layout_constraintEnd_toStartOf="@+id/gTeam2"
+        app:layout_constraintStart_toEndOf="@+id/gtextView8"
+        app:layout_constraintTop_toBottomOf="@+id/gGameDate"/>
+
+    <TextView
+        android:id="@+id/actualScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/purple_400"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gStatus"
+        app:layout_constraintStart_toEndOf="@+id/gGameNo_time"
+        app:layout_constraintTop_toBottomOf="@+id/gtextView8" />
+    <TextView
+        android:id="@+id/gGameDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

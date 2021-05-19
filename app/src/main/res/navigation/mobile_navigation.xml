@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_schedule">
+
+    <fragment
+        android:id="@+id/navigation_schedule"
+        android:name="com.example.ihwc.ui.schedule.ScheduleFragment"
+        android:label="Schedule"
+        tools:layout="@layout/schedule_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_standings"
+        android:name="com.example.ihwc.ui.standings.StandingsFragment"
+        android:label="Table"
+        tools:layout="@layout/standings_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_statistics"
+        android:name="com.example.ihwc.ui.statistics.StatisticsFragment"
+        android:label="Statistics"
+        tools:layout="@layout/statistics_fragment" />
+    <fragment
+        android:id="@+id/navigation_teams"
+        android:name="com.example.ihwc.ui.teams.TeamsFragment"
+        android:label="Teams"
+        tools:layout="@layout/teams_fragment" />
+</navigation>
