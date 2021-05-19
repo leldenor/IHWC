@@ -9,24 +9,23 @@ Requirements
 
 Critical priority
 
-1. As a user, I want to see game results
-2. As a user, I want to see teams(countries) participating
-3. As a user, I want to see full schedule of the games in the Championship
-4. As a user, I want to see tournament table
+1. As a user, I want to see game results (Implemented)
+2. As a user, I want to see teams(countries) participating (Implemented)
+3. As a user, I want to see full schedule of the games in the Championship (Implemented)
+4. As a user, I want to see tournament table (Implemented)
 
 High priority
 
-5. As a user, I want to see information about each game in real time
-6. As a user, I want to select a favorite team(country)
-7. As a user, I want to select that I am a fan of a team for each game
-8. As a user, I want to get notified of my selected teams game changes
-9. As a user, I want to see number of fans for each team on each game
-10. As a user, I want to see statistics on each team
+5. As a user, I want to see each games scores in real time (Implemented)
+6. As a user, I want to select a favorite team(country) (Implemented)
+7. As a user, I want to guess the results of the game (Implemented)
+8. As a user, I want to see scoring leaders (Implemented)
+9.  As a user, I want to select that I am a fan of a team for each game (Implemented)
+10. As a user, I want to see number of fans for each team on each game (Implemented)
 
 Low priority
 
-11. As a user, I want to guess the results of the game
-12. As a user, I want to see others prediction results
-13. As a user, I want to see statistics on each player
-14. As a user, I want to see each teams history in the Ice Hockey World Champinships
-15. As a user, I want to see each teams history against opponent
+12. As a user, I want to get notified of my selected teams game changes (Not implemented)
+13. As a user, I want to see guessing game leaders (who guessed most game results correct) (Not implemented)
+14. As a user, I want to see each teams history in the Ice Hockey World Champinships (Not implemented)
+15. As a user, I want to see each teams history against opponent (Not implemented)
