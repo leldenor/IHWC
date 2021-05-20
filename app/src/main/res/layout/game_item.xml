@@ -93,6 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/gGameDate" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
@@ -138,32 +139,31 @@
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
         android:text="Save"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/gStatus"
         app:layout_constraintStart_toEndOf="@+id/gGameNo_time"
-        app:layout_constraintTop_toTopOf="@+id/gGameNo_time" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
     <TextView
         android:id="@+id/guessScore1"
-        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/gGameNo_time"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/gtextView8"
         app:layout_constraintStart_toEndOf="@+id/gTeam1"
-        app:layout_constraintTop_toBottomOf="@+id/gGameDate"/>
+        app:layout_constraintTop_toBottomOf="@+id/gGameDate" />
 
     <TextView
         android:id="@+id/guessScore2"
-        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/gStatus"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/gTeam2"
         app:layout_constraintStart_toEndOf="@+id/gtextView8"
-        app:layout_constraintTop_toBottomOf="@+id/gGameDate"/>
+        app:layout_constraintTop_toBottomOf="@+id/gGameDate" />
 
     <TextView
         android:id="@+id/actualScore"

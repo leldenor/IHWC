@@ -63,17 +63,24 @@ public class GuessGameAdapter extends FirebaseRecyclerAdapter<Game, GuessGameAda
         holder.date.setText(model.getDate());
         holder.gameNo_time.setText(model.getGameNo_time());
         holder.status.setText(model.getStatus());
-        int id1=gameList.get(position).gScoreTeam1;
-        int id2=gameList.get(position).gScoreTeam2;
-        score1List.add(position,id1);
 
-        score2List.add(position,id2);
+        score1List.add(position, gameList.get(position).gScoreTeam1);
+        score2List.add(position, gameList.get(position).gScoreTeam2);
+
         Button save= holder.save;
+        EditText gScoreTeam1=holder.gScoreTeam1;
+        EditText gScoreTeam2=holder.gScoreTeam2;
 
         if(model.getStatus().equals("SCHEDULED")){
 
-            EditText gScoreTeam1=holder.gScoreTeam1;
-            EditText gScoreTeam2=holder.gScoreTeam2;
+            holder.actualScore.setVisibility(View.GONE);
+            holder.guessScore1.setVisibility(View.GONE);
+            holder.guessScore2.setVisibility(View.GONE);
+            holder.save.setVisibility(View.VISIBLE);
+            holder.gScoreTeam1.setVisibility(View.VISIBLE);
+            holder.gScoreTeam2.setVisibility(View.VISIBLE);
+
+
             gScoreTeam1.setText(String.valueOf(gameList.get(position).gScoreTeam1), TextView.BufferType.EDITABLE);
             gScoreTeam2.setText(String.valueOf(gameList.get(position).gScoreTeam2), TextView.BufferType.EDITABLE);
 
@@ -95,11 +102,15 @@ public class GuessGameAdapter extends FirebaseRecyclerAdapter<Game, GuessGameAda
                     isOnTextChange1=false;
 
                     try {
-                            for(int i=0;i<=id1;i++){
-                                if(i==id1){
-                                    score1List.set(id1, Integer.parseInt(s.toString()));
+                            for(int i=0;i<=position;i++){
+                                int inPosition=position;
+                                if(i!=position){
+                                    score1List.add(0);
+
                                 }else{
-                                    score1List.add(gameList.get(position).gScoreTeam1);
+                                    score1List.add(0);
+                                    score1List.set(inPosition, Integer.parseInt(s.toString()));
+                                    break;
                                 }
                             }
                             Log.i("Score Team 1", s.toString()+"  "+gameList.get(position).getGameId());
@@ -127,16 +138,20 @@ public class GuessGameAdapter extends FirebaseRecyclerAdapter<Game, GuessGameAda
                     isOnTextChange2=false;
 
                     try {
-                        for(int i=0;i<=id2;i++){
-                            if(i==id2){
-                                score2List.set(id2, Integer.parseInt(s.toString()));
+                        for(int i=0;i<=position;i++){
+                            int inPosition=position;
+                            if(i!=position){
+                                score2List.add(0);
+
                             }else{
-                                score2List.add(gameList.get(position).gScoreTeam2);
+                                score2List.add(0);
+                                score2List.set(inPosition, Integer.parseInt(s.toString()));
+                                break;
                             }
                         }
                         
 
-                            Log.i("Score Team 2", s.toString());
+
                     }catch (NumberFormatException e){
                         Log.d("GuessGameAdapterText2", e.getMessage());
                     }
@@ -172,6 +187,9 @@ public class GuessGameAdapter extends FirebaseRecyclerAdapter<Game, GuessGameAda
 
         });}
         else{
+            holder.actualScore.setVisibility(View.VISIBLE);
+            holder.guessScore1.setVisibility(View.VISIBLE);
+            holder.guessScore2.setVisibility(View.VISIBLE);
             holder.actualScore.setText(model.getTeam1C()+" "+model.getScoreTeam1()+":"+model.getScoreTeam2()+" "+model.getTeam2C());
             holder.gScoreTeam1.setVisibility(View.GONE);
             holder.gScoreTeam2.setVisibility(View.GONE);
