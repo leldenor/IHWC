@@ -101,10 +101,9 @@ public class GuessGameAdapter extends FirebaseRecyclerAdapter<Game, GuessGameAda
                             for(int i=0;i<=position;i++){
 
                                 if(i!=position){
-                                    score1List.add(0);
+                                    score1List.add(gameList.get(i).gScoreTeam1);
 
                                 }else{
-                                    score1List.add(0);
                                     score1List.set(position, Integer.parseInt(s.toString()));
                                     break;
                                 }
@@ -135,10 +134,9 @@ public class GuessGameAdapter extends FirebaseRecyclerAdapter<Game, GuessGameAda
                     try {
                         for(int i=0;i<=position;i++){
                             if(i!=position){
-                                score2List.add(0);
+                                score2List.add(gameList.get(i).gScoreTeam2);
 
                             }else{
-                                score2List.add(0);
                                 score2List.set(position, Integer.parseInt(s.toString()));
                                 break;
                             }
