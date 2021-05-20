@@ -26,13 +26,13 @@ Should have
 Could have
 
 12. As a user, I want to get notified of my selected teams game changes (Not implemented)
-13. As a user, I want to see guessing game leaders (who guessed most game results correct) (Not implemented)
+13. As a user, I want to see each teams history in the Ice Hockey World Champinships (Not implemented)
+14. As a user, I want to see each teams history against opponent (Not implemented)
 
 Will not have
 
-14. As a user, I want to see each teams history in the Ice Hockey World Champinships (Not implemented)
-15. As a user, I want to see each teams history against opponent (Not implemented)
+14. As a user, I want to see guessing game leaders (who guessed most game results correct) (Not implemented)
 
 Demo
 
-The demo video is available here: https://youtu.be/fC1-S5409tA 
+The demo video is available here: https://youtu.be/cH9SN9KkMLQ
