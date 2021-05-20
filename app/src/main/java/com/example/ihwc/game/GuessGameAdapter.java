@@ -77,8 +77,6 @@ public class GuessGameAdapter extends FirebaseRecyclerAdapter<Game, GuessGameAda
             holder.save.setVisibility(View.VISIBLE);
             holder.gScoreTeam1.setVisibility(View.VISIBLE);
             holder.gScoreTeam2.setVisibility(View.VISIBLE);
-
-
             gScoreTeam1.setText(String.valueOf(gameList.get(position).gScoreTeam1), TextView.BufferType.EDITABLE);
             gScoreTeam2.setText(String.valueOf(gameList.get(position).gScoreTeam2), TextView.BufferType.EDITABLE);
 
@@ -101,13 +99,13 @@ public class GuessGameAdapter extends FirebaseRecyclerAdapter<Game, GuessGameAda
 
                     try {
                             for(int i=0;i<=position;i++){
-                                int inPosition=position;
+
                                 if(i!=position){
                                     score1List.add(0);
 
                                 }else{
                                     score1List.add(0);
-                                    score1List.set(inPosition, Integer.parseInt(s.toString()));
+                                    score1List.set(position, Integer.parseInt(s.toString()));
                                     break;
                                 }
                             }
@@ -136,13 +134,12 @@ public class GuessGameAdapter extends FirebaseRecyclerAdapter<Game, GuessGameAda
 
                     try {
                         for(int i=0;i<=position;i++){
-                            int inPosition=position;
                             if(i!=position){
                                 score2List.add(0);
 
                             }else{
                                 score2List.add(0);
-                                score2List.set(inPosition, Integer.parseInt(s.toString()));
+                                score2List.set(position, Integer.parseInt(s.toString()));
                                 break;
                             }
                         }
@@ -168,7 +165,7 @@ public class GuessGameAdapter extends FirebaseRecyclerAdapter<Game, GuessGameAda
 
                         gameSnapshot.getRef().child("gScoreTeam1").setValue(score1List.get(position));
                         gameSnapshot.getRef().child("gScoreTeam2").setValue(score2List.get(position));
-                        Toast.makeText(context, "Score "+model.getTeam1C()+" "+score1List.get(position)+" : "+score2List.get(position)+" "+model.getTeam2C(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, "Score "+model.getTeam1C()+" "+score1List.get(position)+" : "+score2List.get(position)+" "+model.getTeam2C(), Toast.LENGTH_SHORT).show();
                     }
 
 
@@ -176,7 +173,7 @@ public class GuessGameAdapter extends FirebaseRecyclerAdapter<Game, GuessGameAda
 
                 @Override
                 public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
+                    Log.i("GuessAdapter", error.getMessage());
                 }
             });
 
