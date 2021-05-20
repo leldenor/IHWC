@@ -1,7 +1,6 @@
 package com.example.ihwc.game;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -16,12 +15,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.ihwc.R;
-import com.example.ihwc.ui.schedule.Game;
+import com.example.ihwc.main.schedule.Game;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
@@ -113,7 +111,6 @@ public class GuessGameAdapter extends FirebaseRecyclerAdapter<Game, GuessGameAda
                                     break;
                                 }
                             }
-                            Log.i("Score Team 1", s.toString()+"  "+gameList.get(position).getGameId());
                     }catch (NumberFormatException e){
                         Log.d("GuessGameAdapterText1", e.getMessage());
                     }
@@ -168,7 +165,6 @@ public class GuessGameAdapter extends FirebaseRecyclerAdapter<Game, GuessGameAda
                 public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
 
                     for(DataSnapshot gameSnapshot: snapshot.getChildren()){
-                        Log.i("Adapter", gameSnapshot.getRef().toString());
 
                         gameSnapshot.getRef().child("gScoreTeam1").setValue(score1List.get(position));
                         gameSnapshot.getRef().child("gScoreTeam2").setValue(score2List.get(position));

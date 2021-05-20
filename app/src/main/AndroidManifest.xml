@@ -12,22 +12,21 @@
         android:theme="@style/Theme.IHWC">
         <activity android:name=".game.GameActivity"
             android:label="@string/title_activity_game"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".main.MainActivity"/>
         <activity
             android:name=".login.LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".admin.AdminActivity" />
         <activity
             android:name=".game.FullscreenGameActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_fullscreen_game"
             android:theme="@style/Theme.IHWC.Fullscreen" />
         <activity
-            android:name=".TeamInfoActivity"
+            android:name=".teamInfo.TeamInfoActivity"
             android:label="@string/title_activity_team_info"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".main.MainActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".main.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

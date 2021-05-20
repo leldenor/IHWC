@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/groupTabs"
-    tools:context=".ui.standings.StandingsFragment">
+    tools:context=".main.standings.StandingsFragment">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayoutGroups"

@@ -1,6 +1,5 @@
 package com.example.ihwc.game;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,9 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.ihwc.R;
-import com.example.ihwc.login.User;
-import com.example.ihwc.ui.schedule.Game;
-import com.example.ihwc.ui.schedule.GameAdapter;
+import com.example.ihwc.main.schedule.Game;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -31,9 +28,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-
-import static android.content.Context.MODE_PRIVATE;
 
 public class GuessGameFragment extends Fragment {
 
@@ -94,7 +88,7 @@ public class GuessGameFragment extends Fragment {
 
                 @Override
                 public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
+                    Log.i("GuessGame", error.getMessage());
                 }
             });
 
@@ -113,7 +107,7 @@ public class GuessGameFragment extends Fragment {
 
                 @Override
                 public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
+                    Log.i("GuessGame", error.getMessage());
                 }
             });
 
@@ -132,7 +126,7 @@ public class GuessGameFragment extends Fragment {
 
                 @Override
                 public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
+                    Log.i("GuessGame", error.getMessage());
                 }
             });
 
@@ -152,7 +146,7 @@ public class GuessGameFragment extends Fragment {
 
                 @Override
                 public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
+                    Log.i("GuessGame", error.getMessage());
                 }
             });
 
@@ -203,29 +197,6 @@ public class GuessGameFragment extends Fragment {
 
             }
         });
-
-       /* databaseReference.child("users").child(userID).child("games").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
-                for (DataSnapshot gSnapshot: snapshot.getChildren()) {
-                    GuessGame guessGame=gSnapshot.getValue(GuessGame.class);
-                    for(int i=0;i<gameList.size();i++){
-                        if(gameList.get(i).gameId.equals(guessGame.gameId)){
-                            gameList.get(i).setgScoreTeam1(guessGame.gScoreTeam1);
-                            gameList.get(i).setgScoreTeam2(guessGame.gScoreTeam2);
-                        }
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
-            }
-        });*/
-        for(int i=0;i<gameList.size();i++){
-            Log.i("GameList", gameList.get(i).gameId+"  "+gameList.get(i).gScoreTeam1);
-        }
 
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();

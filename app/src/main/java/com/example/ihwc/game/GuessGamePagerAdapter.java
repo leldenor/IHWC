@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class GuessGamePagerAdapter extends FragmentStateAdapter {
 
-    private Context context;
+
     final int PAGE_COUNT=4;
 
     public GuessGamePagerAdapter(@NonNull @NotNull FragmentActivity fragmentActivity) {

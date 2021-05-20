@@ -12,7 +12,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -20,23 +19,12 @@ import android.widget.Toast;
 import com.example.ihwc.game.FullscreenGameActivity;
 import com.example.ihwc.R;
 import com.example.ihwc.game.GuessGame;
-import com.example.ihwc.ui.schedule.Game;
-import com.facebook.AccessToken;
-import com.facebook.AccessTokenTracker;
-import com.facebook.CallbackManager;
-import com.facebook.login.widget.LoginButton;
-import com.facebook.share.Share;
+import com.example.ihwc.main.schedule.Game;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -49,7 +37,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -114,20 +101,17 @@ public class LoginActivity extends AppCompatActivity {
                     User user=userSnapshot.getValue(User.class);
 
                 intent.putExtra("User", user.username);
-                Log.i("Username", user.email);
                 startActivity(intent);
-               Log.i("Snapshot", user.email);
                 }}
                 else{
                     EditText editText=new EditText(LoginActivity.this);
                     setUsername(editText, userId, email);
-                    Log.i("User", editText.getText().toString());
                 }
             }
 
             @Override
             public void onCancelled(@NonNull @NotNull DatabaseError error) {
-                Log.i("Error", error.getMessage());
+                Log.i("Login", error.getMessage());
             }
         });
 
@@ -173,7 +157,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                     @Override
                                     public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
+                                        Log.i("Login", error.getMessage());
                                     }
                                 });
 
@@ -188,7 +172,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
+                        Log.i("Login", error.getMessage());
                     }
                 });
             });
